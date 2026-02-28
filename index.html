@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Página Web</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            text-align: center;
+            color: white;
+            margin: 0;
+        }
+
+        .contenedor {
+            margin-top: 100px;
+        }
+
+        .card {
+            background: rgba(0,0,0,0.4);
+            padding: 30px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        button {
+            background: #ff9800;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e68900;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <div class="card">
+            <h1>Bienvenido a mi página web 😎</h1>
+            <p>Nombre: Yair</p>
+            <p>Materia: Administración de Redes</p>
+            <p>Servidor Web funcionando 🚀</p>
+
+            <button onclick="saludo()">Haz clic</button>
+        </div>
+    </div>
+
+    <script>
+        function saludo() {
+            alert("Hola Yair 👋 Tu página funciona correctamente");
+        }
+    </script>
+
+</body>
+</html>
