@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas con mouse</title>
+
+    <script>
+        function coloreacanvasconmause(event){
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+
+            var rect = canvas.getBoundingClientRect();
+
+            var posx = event.clientX - rect.left;
+            var posy = event.clientY - rect.top;
+
+            document.getElementById("posx").value = Math.round(posx);
+            document.getElementById("posy").value = Math.round(posy);
+
+            var colordeseado = document.getElementById("colordeseado").value;
+            ctx.fillStyle = colordeseado;
+
+            var grosor = document.getElementById("grosor").value;
+            ctx.fillRect(posx, posy, grosor, grosor);
+        }
+    </script>
+</head>
+
+<body>
+
+    <canvas id="myCanvas"
+        onmousemove="coloreacanvasconmause(event)"
+        width="800"
+        height="400"
+        style="border:10px double #d11717;">
+    </canvas>
+
+    <br><br>
+
+    posx: <input type="text" id="posx" value="0">
+    posy: <input type="text" id="posy" value="0">
+
+    <input type="color" id="colordeseado" value="#ff0000">
+    <input type="range" id="grosor" min="1" max="20" value="10">
+
+    <input type="button" value="Limpiar" onclick="location.reload()">
+
+</body>
+</html>
